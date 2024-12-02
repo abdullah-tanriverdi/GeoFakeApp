@@ -1,16 +1,35 @@
 # geo_fake
 
-Fake Geo
+GEO FAKE
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Bu proje, bir Flutter uygulaması için başlangıç noktasıdır.
 
-A few resources to get you started if this is your first Flutter project:
+### İlkin MapLibre Projeye Eklendi
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+İlk olarak, `maplibre_gl: ^0.20.0` MapLibre Flutter SDK'sını `pubspec.yaml` dosyasına ekledim.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Klasör Yapısı
+
+Sonrasında iki ana klasör oluşturdum:
+
+- **home**: Bu klasörde ana ekranları ayarlayacağım yer.
+- **widget**: Uygulama üzerindeki görünürleri modüler hale getireceğim kısmı barındıracak.
+
+### WidgetMap Sınıfı
+
+`WidgetMap` sınıfını, harita üzerinde kullanacağım tüm işlemleri modüler hale getirebilmek için `widget` klasörüne ekledim. Bu sınıfta:
+
+- **MapLibreMap** kullandığımı belirttim.
+- **Kamera odaklama** işlevini ekledim.
+- Haritanın **stili** ve **zoom** seviyesini ayarladım.
+
+### Home Sınıfı
+
+Ana ekranı yönetmek için `home` klasöründe bir sınıf oluşturdum. Bu sınıfın içinde:
+
+- **Stack** yapısını kullandım. Stack, widget'ları üst üste yerleştirebilmek için kullanılıyor.
+- İlk olarak, `MapWidget`'ı Stack widget'ının içine ekledim.
+
+Bu şekilde, uygulamanın harita ve diğer öğelerini dinamik bir şekilde yöneteceğim.
